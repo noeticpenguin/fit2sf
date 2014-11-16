@@ -1,0 +1,21 @@
+<%= form_for(@rk) do |f| %>
+  <% if @rk.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rk.errors.count, "error") %> prohibited this rk from being saved:</h2>
+
+      <ul>
+      <% @rk.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :authtoken %><br>
+    <%= f.text_field :authtoken %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

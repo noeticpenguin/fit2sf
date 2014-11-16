@@ -1,0 +1,25 @@
+<h1>Listing rks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Authtoken</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rks.each do |rk| %>
+      <tr>
+        <td><%= rk.authtoken %></td>
+        <td><%= link_to 'Show', rk %></td>
+        <td><%= link_to 'Edit', edit_rk_path(rk) %></td>
+        <td><%= link_to 'Destroy', rk, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rk', new_rk_path %>
